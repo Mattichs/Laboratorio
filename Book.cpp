@@ -14,7 +14,7 @@ Book::Book(){
     copyright=Date();
     stato=false;
 }
-Book::Book(std::string isbn,std::string t,std::string n,std::string c, const Date& copy){
+Book::Book(std::string n,std::string c,std::string t,std::string isbn, const Date& copy){
     if(!controlISBN(isbn)){
         throw "invalid isbn!";
     }
