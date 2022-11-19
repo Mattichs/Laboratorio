@@ -4,7 +4,7 @@
 
 bool controlISBN(std::string str) {
     // ISBN lungo obbligatoriamente 17
-    std::cout << "control" << std::endl;
+    //std::cout << "control" << std::endl;
     if(str.length() != 13) return false;
     //
     // tipo "111-222-333-X" X puo' essere lettera o numero
@@ -13,7 +13,7 @@ bool controlISBN(std::string str) {
     std::string s = ""; 
     for(int i = 0; i < 12; i+=4) {
         std::string substring = str.substr(i, str.find(delimiter));
-        std::cout << "substring: " <<substring << std::endl;  
+        //std::cout << "substring: " <<substring << std::endl;  
         s += substring;
     } 
 
