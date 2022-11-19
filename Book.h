@@ -9,5 +9,11 @@ class Book {
     std::string cognome;
     //Date copiright;
     bool stato;
-    
+public: 
+    std::string get_isbn();
+    std::string get_titolo();
+    std::string get_nome();
+    std::string get_cognome();
+    std::string get_date();
+    std::string get_stato();
 };
