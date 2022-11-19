@@ -9,7 +9,9 @@ class Date{
     int month;
     int year;
     public:
+    Date();
     Date(int d, int m, int y);
+    Date(const Date& d);
     int getDay();
     int getMonth();
     int getYear();
