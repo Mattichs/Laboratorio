@@ -1,10 +1,10 @@
 #include <iostream>
 #include <string>
 #include "Date.h"
-#include "DateControl.cpp"
+#include "DateControl.h"
 
        Date:: Date(int d, int m, int y){
-            if(!dateControl(d,m,y)){
+            if(!myDateControl(d,m,y)){
                 throw "invalid date!";
             }
             day=d;
