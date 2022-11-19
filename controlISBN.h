@@ -1,5 +1,5 @@
-#ifndef control_ISBN
-#define control_ISBN
+#ifndef controlISBN_H
+#define controlISBN_H
 
 #include <string>
 
