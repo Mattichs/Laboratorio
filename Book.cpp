@@ -2,9 +2,48 @@
 #define book_H
 
 #include "Book.h"
+#include "Date.h"
 #include <string>
+#include "controlISBN.h"
 
-
+Book::Book(){
+    ISBN="111-111-111-1";
+    titolo="book";
+    nome="name";
+    cognome="surname";
+    copyright=Date();
+    stato=false;
+}
+Book::Book(std::string n,std::string c,std::string t,std::string isbn, const Date& copy){
+    if(!controlISBN(isbn)){
+        throw "invalid isbn!";
+    }
+    ISBN=isbn;
+    titolo=t;
+    nome=n;
+    cognome=c;
+    copyright=Date(copy);
+    stato=false;
+}
+Book::Book(std::string n,std::string c,std::string t,std::string isbn){
+    if(!controlISBN(isbn)){
+        throw "invalid isbn!";
+    }
+    ISBN=isbn;
+    titolo=t;
+    nome=n;
+    cognome=c;
+    copyright=Date();
+    stato=false;
+}
+Book:: Book(const Book& b){
+    this->ISBN=b.ISBN;
+    this->titolo=b.titolo;
+    this->nome=b.nome;
+    this->cognome=b.cognome;
+    this->copyright=Date(b.copyright);
+    this->stato=b.stato; 
+}
 std::string Book::get_isbn() const{
     return ISBN;
 }
@@ -17,8 +56,8 @@ std::string Book::get_nome() const{
 std::string Book::get_cognome() const{
     return cognome;
 }
-std::string Book::get_date() const{
-    return "data";
+Date Book::get_copyright() const{
+    return copyright;
 }
 bool Book::is_available() const{
     return stato;
@@ -47,9 +86,10 @@ bool operator !=(const Book& b1, const Book& b2){
 }
 
 std::ostream& operator<<(std::ostream& os, const Book& b){
-	return os << "Autore" << b.get_nome() << " " << b.get_cognome() << "\n" 
-              << "Title : " << b.get_titolo() << "\n" 
-              << "ISBN:" << b.get_isbn();
+	return os   << "Titolo : " << b.get_titolo() << "\n" 
+                << "Autore : " << b.get_nome() << " " << b.get_cognome() << "\n" 
+                << "Copyright : " << b.get_copyright() << "\n" 
+                << "ISBN:" << b.get_isbn();
 }
 
 #endif
