@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include "controlISBN.h"
+#include <ostream>
 
 class Book {
     std::string ISBN; // tipo "111-222-333-444-X" X puo' essere lettera o numero
@@ -10,10 +11,17 @@ class Book {
     //Date copiright;
     bool stato;
 public: 
-    std::string get_isbn();
-    std::string get_titolo();
-    std::string get_nome();
-    std::string get_cognome();
-    std::string get_date();
-    std::string get_stato();
+    std::string get_isbn() const;
+    std::string get_titolo() const;
+    std::string get_nome() const;
+    std::string get_cognome() const;
+    std::string get_date() const;
+    bool is_available() const;
+    void take_book();
+    void return_book();
 };
+
+bool operator==(const Book& b1, const Book& b2);
+bool operator!=(const Book& b1, const Book& b2);
+
+std::ostream& operator<<(std::ostream& os, const Book& b);
