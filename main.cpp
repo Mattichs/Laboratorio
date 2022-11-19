@@ -2,10 +2,10 @@
 #include "Book.h"
 
 int main() {
-    if(control("111-222-333-X")) {
-        cout << "ISBN valido";
+    if(controlISBN("111-222-333-c")) {
+        std::cout << "ISBN valido";
     } else {
-        cout << "ISBN non valido (coglione)";
+        std::cout << "ISBN non valido (coglione)";
     }
     
     return 0;
