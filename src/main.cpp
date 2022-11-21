@@ -26,7 +26,7 @@ int main() {
     if(shelf[5].is_available()) std::cout << "Libro non disponibile" << std::endl;
     else std::cout << "Libro disponibile" << std::endl;
 
-    
+    /* 
     std::cout << shelf[5] << std::endl;
     Book my_favourite_book;
     try {
@@ -40,6 +40,6 @@ int main() {
     if(shelf[5] == my_favourite_book) std::cout << "I due codici ISBN corrispondono";
     // test operatore !=
     if(shelf[5] != my_favourite_book) std::cout << "I due codici ISBN NON corrispondono";
-    
+     */
     return 0;
 }

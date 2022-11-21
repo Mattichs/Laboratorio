@@ -1,8 +1,4 @@
-#ifndef book_H
-#define book_H
-
 #include "Book.h"
-#include "Date.h"
 #include <string>
 #include "controlISBN.h"
 
@@ -65,7 +61,7 @@ bool Book::is_available() const{
 
 void Book::return_book(){
     if(!is_available()) std::cout << "Non puoi restituire un libro che risulta disponibile" << std::endl;
-    else stato = true;
+    else stato = false;
 }
 
 void Book::take_book(){
@@ -87,5 +83,3 @@ std::ostream& operator<<(std::ostream& os, const Book& b){
                 << "Copyright : " << b.get_copyright() << "\n" 
                 << "ISBN:" << b.get_isbn();
 }
-
-#endif
