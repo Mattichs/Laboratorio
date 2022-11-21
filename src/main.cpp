@@ -15,17 +15,24 @@ int main() {
     
     std::cout << "Stato del libro prima del prestito: " << shelf[5].is_available() << std::endl;
     // test prestito
-    shelf[5].take_book();
-    if(shelf[5].is_available()) std::cout << "Libro non disponibile" << std::endl;
-    else std::cout << "Libro disponibile" << std::endl ;
+    try {
+        shelf[5].take_book();
+        if(shelf[5].is_available()) std::cout << "Libro non disponibile" << std::endl;
+        else std::cout << "Libro disponibile" << std::endl ;
+     } catch (const char* e) {
+        std::cout << e;
+    }
     
     std::cout << "Stato del libro dopo del prestito: " << shelf[5].is_available() << std::endl;
 
     // test restituzione
-    shelf[5].return_book();
-    if(shelf[5].is_available()) std::cout << "Libro non disponibile" << std::endl;
-    else std::cout << "Libro disponibile" << std::endl;
-
+    try {
+        shelf[5].return_book();
+        if(shelf[5].is_available()) std::cout << "Libro non disponibile" << std::endl;
+        else std::cout << "Libro disponibile" << std::endl;
+    } catch (const char* e) {
+        std::cout << e;
+    }
     
     std::cout << shelf[5] << std::endl;
     Book my_favourite_book;
