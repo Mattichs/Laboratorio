@@ -8,7 +8,7 @@ Book::Book(){
     nome="name";
     cognome="surname";
     copyright=Date();
-    stato=false;
+    stato=true;
 }
 Book::Book(std::string n,std::string c,std::string t,std::string isbn, const Date& copy){
     if(!controlISBN(isbn)){
@@ -19,7 +19,7 @@ Book::Book(std::string n,std::string c,std::string t,std::string isbn, const Dat
     nome=n;
     cognome=c;
     copyright=Date(copy);
-    stato=false;
+    stato=true;
 }
 Book::Book(std::string n,std::string c,std::string t,std::string isbn){
     if(!controlISBN(isbn)){
@@ -30,7 +30,7 @@ Book::Book(std::string n,std::string c,std::string t,std::string isbn){
     nome=n;
     cognome=c;
     copyright=Date();
-    stato=false;
+    stato=true;
 }
 Book:: Book(const Book& b){
     this->ISBN=b.ISBN;
