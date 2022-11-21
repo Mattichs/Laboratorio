@@ -60,12 +60,14 @@ bool Book::is_available() const{
 }
 
 void Book::return_book(){
-    if(!is_available()) std::cout << "Non puoi restituire un libro che risulta disponibile" << std::endl;
+
+    if(!is_available()) throw "Non puoi restituire un libro che risulta disponibile" ;
     else stato = false;
+
 }
 
 void Book::take_book(){
-    if(is_available()) std::cout << "Non puoi prendere un libro che non risulta disponibile" << std::endl;
+    if(is_available()) throw "Non puoi prendere un libro che non risulta disponibile" ;
     else stato = true;
 }
 
