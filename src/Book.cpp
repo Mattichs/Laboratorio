@@ -1,3 +1,5 @@
+#ifndef book_H
+#define book_H
 #include "Book.h"
 #include <string>
 #include "controlISBN.h"
@@ -85,3 +87,4 @@ std::ostream& operator<<(std::ostream& os, const Book& b){
                 << "Copyright : " << b.get_copyright() << "\n" 
                 << "ISBN:" << b.get_isbn();
 }
+#endif
