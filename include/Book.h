@@ -10,11 +10,7 @@ class Book {
     std::string nome;
     std::string cognome;
     Date copyright;
-<<<<<<< HEAD:include/Book.h
     bool stato; // impostato di default a false (false: disponibile / true: occupato)
-=======
-    bool stato;
->>>>>>> main:Book.h
 public: 
     Book();
     // costruttore nome, cognome, titolo, ISBN, date
