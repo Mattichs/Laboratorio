@@ -60,7 +60,6 @@ bool Book::is_available() const{
 }
 
 void Book::return_book(){
-
     if(!is_available()) throw "Non puoi restituire un libro che risulta disponibile" ;
     else stato = false;
 
