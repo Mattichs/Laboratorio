@@ -8,9 +8,8 @@ class Book {
     std::string titolo;
     std::string nome;
     std::string cognome;
-    //Date copiright;
-    bool stato;
->>>>>>> main:Book.h
+    Date copyright;
+    bool stato; // impostato di default a false (false: disponibile / true: occupato)
 public: 
     std::string get_isbn() const;
     std::string get_titolo() const;
