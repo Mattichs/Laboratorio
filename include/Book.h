@@ -2,26 +2,21 @@
 #include <string>
 #include "controlISBN.h"
 #include <ostream>
-#include "Date.h"
 
 class Book {
     std::string ISBN; // tipo "111-222-333-444-X" X puo' essere lettera o numero
     std::string titolo;
     std::string nome;
     std::string cognome;
-    Date copyright;
+    //Date copiright;
     bool stato;
+>>>>>>> main:Book.h
 public: 
-    Book();
-    // costruttore nome, cognome, titolo, ISBN, date
-    Book(std::string n,std::string c,std::string t,std::string isbn,const Date& copy);
-    Book(std::string n,std::string c,std::string t,std::string isbn);
-    Book(const Book& b);
     std::string get_isbn() const;
     std::string get_titolo() const;
     std::string get_nome() const;
     std::string get_cognome() const;
-    Date get_copyright() const;
+    std::string get_date() const;
     bool is_available() const;
     void take_book();
     void return_book();

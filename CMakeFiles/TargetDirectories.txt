@@ -1,0 +1,3 @@
+/Users/bastia/Desktop/laboratorio/CMakeFiles/progetto.dir
+/Users/bastia/Desktop/laboratorio/CMakeFiles/edit_cache.dir
+/Users/bastia/Desktop/laboratorio/CMakeFiles/rebuild_cache.dir
