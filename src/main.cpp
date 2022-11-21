@@ -12,6 +12,21 @@ int main() {
     } */
     std::vector<Book> shelf(10);
     shelf[5] = Book("David", "Foster Wallace","Una cosa divertente che non faro' mai piu'","887-521-937-4", Date(10,2,1999));
+    
+    std::cout << "Stato del libro prima del prestito: " << shelf[5].is_available() << std::endl;
+    // test prestito
+    shelf[5].take_book();
+    if(shelf[5].is_available()) std::cout << "Libro non disponibile" << std::endl;
+    else std::cout << "Libro disponibile" << std::endl ;
+    
+    std::cout << "Stato del libro dopo del prestito: " << shelf[5].is_available() << std::endl;
+
+    // test restituzione
+    shelf[5].return_book();
+    if(shelf[5].is_available()) std::cout << "Libro non disponibile" << std::endl;
+    else std::cout << "Libro disponibile" << std::endl;
+
+    
     std::cout << shelf[5] << std::endl;
     Book my_favourite_book;
     try {

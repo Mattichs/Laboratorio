@@ -64,17 +64,13 @@ bool Book::is_available() const{
 }
 
 void Book::return_book(){
-    if(is_available()) std::cout << "Non puoi restituire un libro che risulta disponibile";
-
-    else
-        stato = true;
+    if(!is_available()) std::cout << "Non puoi restituire un libro che risulta disponibile" << std::endl;
+    else stato = true;
 }
 
 void Book::take_book(){
-    if(!is_available()) std::cout << "Non puoi prendere un libro che non risulta disponibile";
-
-    else
-        stato = false;
+    if(is_available()) std::cout << "Non puoi prendere un libro che non risulta disponibile" << std::endl;
+    else stato = true;
 }
 
 bool operator==(const Book& b1, const Book& b2){
