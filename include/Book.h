@@ -1,4 +1,5 @@
-
+#ifndef book_H
+#define book_H
 
 #include <iostream>
 #include <string>
@@ -32,3 +33,4 @@ bool operator==(const Book& b1, const Book& b2);
 bool operator!=(const Book& b1, const Book& b2);
 
 std::ostream& operator<<(std::ostream& os, const Book& b);
+#endif
