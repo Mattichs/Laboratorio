@@ -1,6 +1,8 @@
 #include <iostream>
 #include <string>
 #include "Date.h"
+
+// classe per testare date (non viene compilata con cmake)
 int main(){
    std::cout<<0;
    try{

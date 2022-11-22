@@ -2,18 +2,21 @@
 #include <string>
 #include "controlISBN.h"
 
+// tipo "111-222-333-X" X puo' essere lettera o numero
+/* 
+    controllo che ISBN abbia 13 cifre, 
+    poi divido in substring e le unisco senza i trattini,
+    verifico che le tre substring siano 9 caratteri, poi con un altro for verifico che siano digit
+    infine contreollo l'ultimo carattere che sia lettera o numero
+*/
 bool controlISBN(std::string str) {
-    // ISBN lungo obbligatoriamente 17
-    //std::cout << "control" << std::endl;
+    // ISBN lungo obbligatoriamente 13
     if(str.length() != 13) return false;
-    //
-    // tipo "111-222-333-X" X puo' essere lettera o numero
     
     std::string delimiter = "-";
     std::string s = ""; 
     for(int i = 0; i < 12; i+=4) {
         std::string substring = str.substr(i, str.find(delimiter));
-        //std::cout << "substring: " <<substring << std::endl;  
         s += substring;
     } 
 

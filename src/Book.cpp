@@ -2,6 +2,7 @@
 #include <string>
 #include "controlISBN.h"
 
+//costruttore di default
 Book::Book(){
     ISBN="111-111-111-1";
     titolo="book";
@@ -10,6 +11,7 @@ Book::Book(){
     copyright=Date();
     stato=false;
 }
+// costruttore con data
 Book::Book(std::string n,std::string c,std::string t,std::string isbn, const Date& copy){
     if(!controlISBN(isbn)){
         throw "invalid isbn!";
@@ -21,6 +23,7 @@ Book::Book(std::string n,std::string c,std::string t,std::string isbn, const Dat
     copyright=Date(copy);
     stato=false;
 }
+// costruttore senza data
 Book::Book(std::string n,std::string c,std::string t,std::string isbn){
     if(!controlISBN(isbn)){
         throw "invalid isbn!";
@@ -58,19 +61,18 @@ Date Book::get_copyright() const{
 bool Book::is_available() const{
     return stato;
 }
-
+// metodi return e take
 void Book::return_book(){
 
     if(!is_available()) throw "Non puoi restituire un libro che risulta disponibile" ;
     else stato = false;
 
 }
-
 void Book::take_book(){
     if(is_available()) throw "Non puoi prendere un libro che non risulta disponibile" ;
     else stato = true;
 }
-
+//overloading operatori
 bool operator==(const Book& b1, const Book& b2){
 	return b1.get_isbn() == b2.get_isbn();
 }
